@@ -5,8 +5,8 @@ inputs:
   slack-webhook-url:
     description: "Slack Webhook URL"
     required: true
-  mention-here:
-    description: "Whether to mention @here in the notification"
+  mention-channel:
+    description: "Whether to mention the channel in the notification"
     required: false
     default: "true"
 
@@ -26,5 +26,5 @@ runs:
                 type: "mrkdwn"
                 text: |
                   ${{ github.repository }} - *${{ github.workflow }}* failed on `${{ github.ref_name }}`
-                  ${{ inputs.mention-here == 'true' && '<!here>' || '' }}
+                  ${{ inputs.mention-channel == 'true' && '<!channel>' || '' }}
                   <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Logs>

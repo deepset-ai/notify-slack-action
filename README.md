@@ -25,13 +25,13 @@ Uses [`slackapi/slack-github-action@`](https://github.com/slackapi/slack-github-
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
 | `slack-webhook-url` | Yes | - | Slack Incoming Webhook URL |
-| `mention-here` | No | `"true"` | Whether to include `@here` in the notification |
+| `mention-channel` | No | `"true"` | Whether to include `@channel` in the notification |
 
 ### Message format
 
 The notification includes:
 - Repository name, workflow name, and branch
-- `@here` mention (configurable)
+- `@channel` mention (configurable)
 - Link to the failed workflow run
 
 ## License
